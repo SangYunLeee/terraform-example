@@ -1,11 +1,11 @@
 ### Terraform ###
 # Local .terraform directories
 **/.terraform/*
-
+**/*.pem
 # .tfstate files
 *.tfstate
 *.tfstate.*
-
+**/local-exec-output-files/*
 # Crash log files
 crash.log
 crash.*.log
@@ -35,3 +35,6 @@ override.tf.json
 terraform.rc
 
 */private-key/*
+
+
+.DS_Store
