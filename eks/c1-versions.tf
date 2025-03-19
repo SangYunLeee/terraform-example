@@ -8,6 +8,14 @@ terraform {
       version = ">= 5.31"
     }
   }
+  # backend "s3" {
+  #   bucket = "terraform-on-aws-eks-fuck"
+  #   key    = "dev/eks-cluster/terraform.tfstate"
+  #   region = "ap-northeast-2"
+
+  #   # For State Locking
+  #   dynamodb_table = "dev-ekscluster"    
+  # }
 }
 
 # Terraform Provider Block
