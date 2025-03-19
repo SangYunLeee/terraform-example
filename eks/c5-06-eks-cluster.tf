@@ -9,7 +9,9 @@ resource "aws_eks_cluster" "eks_cluster" {
     endpoint_public_access  = var.cluster_endpoint_public_access
     public_access_cidrs     = var.cluster_endpoint_public_access_cidrs    
   }
-
+  access_config {
+    authentication_mode = "API"
+  }
   kubernetes_network_config {
     service_ipv4_cidr = var.cluster_service_ipv4_cidr
   }
