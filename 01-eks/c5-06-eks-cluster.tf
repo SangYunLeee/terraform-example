@@ -8,6 +8,7 @@ resource "aws_eks_cluster" "eks_cluster" {
     endpoint_private_access = var.cluster_endpoint_private_access
     endpoint_public_access  = var.cluster_endpoint_public_access
     public_access_cidrs     = var.cluster_endpoint_public_access_cidrs    
+    # security_group_ids = [aws_security_group.eks_cluster_sg.id]
   }
   access_config {
     authentication_mode = "API"
