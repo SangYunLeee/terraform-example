@@ -61,8 +61,14 @@ terraform plan
 ```bash
 terraform apply -auto-approve
 ```
+11. EKS 테스트
+```bash
+# 1. 프로필 업데이트 (~/.kube/config)
+# aws eks update-kubeconfig --region ap-northeast-2 --name <Cluster 명>
+aws eks update-kubeconfig --region ap-northeast-2 --name hr-dev-eksdemo1
+kubectl get po
+```
 11. 테라폼 삭제
 ```bash
 terraform destroy -auto-approve
 ```
-
