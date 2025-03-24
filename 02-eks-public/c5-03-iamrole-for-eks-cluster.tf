@@ -60,4 +60,16 @@ resource "aws_eks_access_policy_association" "example" {
   depends_on = [aws_eks_access_entry.eks_admin]
 }
 
+# EKS 관리자 역할 연결 (kubectl get node 권한 이슈 해결)
+resource "aws_eks_access_policy_association" "cluster_admin" {
+  cluster_name  = aws_eks_cluster.eks_cluster.name
+  policy_arn    = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
+  principal_arn = data.aws_caller_identity.current.arn
+
+  access_scope {
+    type       = "cluster"
+  }
+  depends_on = [aws_eks_access_entry.eks_admin]
+}
+
 data "aws_caller_identity" "current" {}
