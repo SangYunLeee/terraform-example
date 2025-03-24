@@ -9,12 +9,12 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "terraform-on-aws-eks-fuck"
+    bucket = "terraform-eks-public"
     key    = "dev/eks-cluster/terraform.tfstate"
     region = "ap-northeast-2"
 
     # For State Locking
-    dynamodb_table = "dev-ekscluster"    
+    dynamodb_table = "terraform-lock-dev-eks-public"    
   }
 }
 
